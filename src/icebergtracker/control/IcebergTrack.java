@@ -9,11 +9,7 @@ import icebergtracker.model.IcebergVolume;
 public class IcebergTrack {
 
     private final IcebergRepository repository;
-    public static void main(String[] args) {
-       IcebergTrack icebergTracker = new IcebergTrack();
-       icebergTracker.getRepository().load();
-       icebergTracker.show();
-    }
+    
     public IcebergTrack() {
         repository = new IcebergRepository();
     }
@@ -22,7 +18,7 @@ public class IcebergTrack {
         return repository;
     }
     
-    private void show() {
+    public void show() {
         for (Iceberg i : repository.getIcebergList()) {
             System.out.println(i.toString());
             for (IcebergLocation p : repository.getLocationList()) {

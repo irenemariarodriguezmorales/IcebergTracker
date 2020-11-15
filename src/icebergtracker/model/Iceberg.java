@@ -1,6 +1,7 @@
 
 package icebergtracker.model;
 
+import icebergtracker.control.IcebergTrack;
 import java.time.LocalDate;
 
 public class Iceberg {
@@ -9,6 +10,11 @@ public class Iceberg {
     private final Origin origin;
     private final LocalDate spawnDate;
     
+    public static void main(String[] args) {
+       IcebergTrack icebergTracker = new IcebergTrack();
+       icebergTracker.getRepository().load();
+       icebergTracker.show();
+    }
     
     public Iceberg(int id, Origin origin, LocalDate spawnDate) {
         this.id = id;
